@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const WeatherInfoIcons = {
-    sunset: "/react-weather-app/icons/temp.svg",
-    sunrise: "/react-weather-app/icons/temp.svg",
-    humidity: "/react-weather-app/icons/humidity.svg",
-    wind: "/react-weather-app/icons/wind.svg",
-    pressure: "/react-weather-app/icons/pressure.svg",
+    sunset: "/geo-weather-tracker/icons/temp.svg",
+    sunrise: "/geo-weather-tracker/icons/temp.svg",
+    humidity: "/geo-weather-tracker/icons/humidity.svg",
+    wind: "/geo-weather-tracker/icons/wind.svg",
+    pressure: "/geo-weather-tracker/icons/pressure.svg",
 };
 
 export const unit = {
@@ -18,24 +18,24 @@ export const unit = {
 };
 
 export const WeatherIcons = {
-    "01d": "/react-weather-app/icons/sunny.svg",
-    "01n": "/react-weather-app/icons/night.svg",
-    "02d": "/react-weather-app/icons/day.svg",
-    "02n": "/react-weather-app/icons/cloudy-night.svg",
-    "03d": "/react-weather-app/icons/cloudy.svg",
-    "03n": "/react-weather-app/icons/cloudy.svg",
-    "04d": "/react-weather-app/icons/perfect-day.svg",
-    "04n": "/react-weather-app/icons/cloudy-night.svg",
-    "09d": "/react-weather-app/icons/rain.svg",
-    "09n": "/react-weather-app/icons/rain-night.svg",
-    "10d": "/react-weather-app/icons/rain.svg",
-    "10n": "/react-weather-app/icons/rain-night.svg",
-    "11d": "/react-weather-app/icons/storm.svg",
-    "11n": "/react-weather-app/icons/storm.svg",
-    "13d": "/react-weather-app/icons/snow.svg",
-    "13n": "/react-weather-app/icons/snow.svg",
-    "50d": "/react-weather-app/icons/wt-3.svg",
-    "50n": "/react-weather-app/icons/wt-14.svg",
+    "01d": "/geo-weather-tracker/icons/sunny.svg",
+    "01n": "/geo-weather-tracker/icons/night.svg",
+    "02d": "/geo-weather-tracker/icons/day.svg",
+    "02n": "/geo-weather-tracker/icons/cloudy-night.svg",
+    "03d": "/geo-weather-tracker/icons/cloudy.svg",
+    "03n": "/geo-weather-tracker/icons/cloudy.svg",
+    "04d": "/geo-weather-tracker/icons/perfect-day.svg",
+    "04n": "/geo-weather-tracker/icons/cloudy-night.svg",
+    "09d": "/geo-weather-tracker/icons/rain.svg",
+    "09n": "/geo-weather-tracker/icons/rain-night.svg",
+    "10d": "/geo-weather-tracker/icons/rain.svg",
+    "10n": "/geo-weather-tracker/icons/rain-night.svg",
+    "11d": "/geo-weather-tracker/icons/storm.svg",
+    "11n": "/geo-weather-tracker/icons/storm.svg",
+    "13d": "/geo-weather-tracker/icons/snow.svg",
+    "13n": "/geo-weather-tracker/icons/snow.svg",
+    "50d": "/geo-weather-tracker/icons/wt-3.svg",
+    "50n": "/geo-weather-tracker/icons/wt-14.svg",
 };
 
 const WeatherCondition = styled.div`

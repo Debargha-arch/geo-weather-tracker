@@ -1,8 +1,8 @@
 {
-  "name": "react-weather-app",
+  "name": "geo-weather-tracker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Debargha-arch.github.io/react-weather-app",
+  "homepage": "https://Debargha-arch.github.io/geo-weather-tracker",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",

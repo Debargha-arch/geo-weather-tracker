@@ -18,7 +18,7 @@ const Container1 = styled.div`
   width: 540px;
   height: 80%;
   color: white;
-  background-image: url("/react-weather-app/locicon/turbine.jpg");
+  background-image: url("/geo-weather-tracker/locicon/turbine.jpg");
 `;
 
 const Container2 = styled.div`
@@ -101,7 +101,7 @@ function App() {
   return (
     <>
     <Header>
-    <img src="/react-weather-app/icons/Klara-1.png" alt='logo'/>
+    <img src="/geo-weather-tracker/icons/Klara-1.png" alt='logo'/>
     <span>GEO WEATHER TRACKER</span>
     </Header>
     <Grid container spacing={15}>
