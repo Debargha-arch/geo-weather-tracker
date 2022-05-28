@@ -1,5 +1,5 @@
 import React from 'react'
-import styledComponents from 'styled-components'
+import styled from 'styled-components'
 
 export const WeatherInfoIcons = {
     sunset: "/react-weather-app/icons/temp.svg",
@@ -7,6 +7,14 @@ export const WeatherInfoIcons = {
     humidity: "/react-weather-app/icons/humidity.svg",
     wind: "/react-weather-app/icons/wind.svg",
     pressure: "/react-weather-app/icons/pressure.svg",
+};
+
+export const unit = {
+  sunset: " IST",
+  sunrise: " IST",
+  humidity: "%",
+  wind: " m/s",
+  pressure: " mbar",
 };
 
 export const WeatherIcons = {
@@ -26,11 +34,11 @@ export const WeatherIcons = {
     "11n": "/react-weather-app/icons/storm.svg",
     "13d": "/react-weather-app/icons/snow.svg",
     "13n": "/react-weather-app/icons/snow.svg",
-    "50d": "/react-weather-app/icons/wind.svg",
-    "50n": "/react-weather-app/icons/wind.svg",
+    "50d": "/react-weather-app/icons/wt-3.svg",
+    "50n": "/react-weather-app/icons/wt-14.svg",
 };
 
-const WeatherCondition = styledComponents.div`
+const WeatherCondition = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,7 +47,7 @@ const WeatherCondition = styledComponents.div`
   margin: 30px auto;
 `;
 
-const Condition = styledComponents.span`
+const Condition = styled.span`
   margin-right: 100px;
   font-size: 16px;
   & span{
@@ -47,13 +55,13 @@ const Condition = styledComponents.span`
   }
 `;
 
-const WeatherLogo = styledComponents.img`
+const WeatherLogo = styled.img`
   width: 140px;
   height: 160px;
   margin: 5px auto;
 `;
 
-const Location = styledComponents.span`
+const Location = styled.span`
   display: flex;
   flex-direction: row;
   font-size: 24px;
@@ -61,7 +69,7 @@ const Location = styledComponents.span`
   margin-left: 100px;
 `;
 
-const WeatherInfo = styledComponents.span`
+const WeatherInfo = styled.span`
   display: flex;
   flex-direction: row;
   font-size: 16px;
@@ -69,7 +77,7 @@ const WeatherInfo = styledComponents.span`
   margin: 15px 10px;
 `;
 
-const WeatherInfoContainer = styledComponents.div`
+const WeatherInfoContainer = styled.div`
   display: flex;
   width: 90%;
   flex-direction: row;
@@ -78,7 +86,7 @@ const WeatherInfoContainer = styledComponents.div`
   flex-wrap: wrap;
 `;
 
-const InfoContainer = styledComponents.div`
+const InfoContainer = styled.div`
   display: flex;
   margin: 5px 10px;
   flex-direction: row;
@@ -86,11 +94,11 @@ const InfoContainer = styledComponents.div`
   align-items: center;
   flex-wrap: wrap;
 `;
-const InfoIcon = styledComponents.img`
+const InfoIcon = styled.img`
   width: 36px;
   height: 36px;
 `;
-const InfoLabel = styledComponents.span`
+const InfoLabel = styled.span`
   display: flex;
   flex-direction: column;
   font-size: 14px;
@@ -106,7 +114,7 @@ const WeatherInfoComponent = (props) => {
         <InfoContainer>
             <InfoIcon src={WeatherInfoIcons[props.name]}/>
             <InfoLabel>
-                {props.value}
+                {props.value}{unit[props.name]}
                 <span>{props.name}</span>
             </InfoLabel>
         </InfoContainer>
@@ -118,7 +126,7 @@ const WeatherComponent = (props) => {
   const {weather} = props;
   const isDay = weather?.weather[0].icon?.includes('d')
   const getTime = (timeStamp) => {
-    return `${new Date(timeStamp * 1000).getHours()} : ${new Date(timeStamp * 1000).getMinutes()}`
+    return `${new Date(timeStamp * 1000).getHours()}:${new Date(timeStamp * 1000).getMinutes()}`
   }
 
   return (

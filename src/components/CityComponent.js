@@ -1,20 +1,7 @@
 import React from 'react'
-import styledComponents from 'styled-components'
+import styled from 'styled-components'
 
-const WeatherLogo = styledComponents.img`
-  width: 160px;
-  height: 140px;
-  margin: 40px auto;
-`;
-
-const ChooseCityLabel = styledComponents.span`
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px auto;
-`;
-
-const SearchBox = styledComponents.form`
+const SearchBox = styled.form`
   display: flex;
   flex-direction: row;
   border: black solid 1px;
@@ -43,12 +30,9 @@ const CityComponent = (props) => {
   const {setCity, fetchWeather} = props;
   return (
     <div>
-        <WeatherLogo src="/react-weather-app/icons/perfect-day.svg" />
-        <br/>
-        <ChooseCityLabel>Choose City:</ChooseCityLabel>
         <SearchBox onSubmit={fetchWeather}>
             <input 
-             placeholder='City'
+             placeholder='Find City'
              onChange={(e)=>setCity(e.target.value)}
             />
             <button type='submit'>Search</button>

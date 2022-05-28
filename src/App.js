@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { useState } from 'react';
-import styledComponents from 'styled-components';
+import { Grid } from '@mui/material';
+import styled from 'styled-components';
 import CityComponent from './components/CityComponent';
 import WeatherComponent from './components/WeatherComponent';
 
 const API_KEY = 'a8688f952698bd5ed7ee9e23b1354a83';
 
-const Container = styledComponents.div`
+const Container1 = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -14,21 +15,81 @@ const Container = styledComponents.div`
   box-shadow: 0 3px 6px 0 #555;
   padding: 20px 10px;
   border-radius: 4px;
-  width: 380px;
-  background: white;
+  width: 540px;
+  height: 90%;
+  color: white;
+  background-image: url("react-weather-app/locicon/turbine.jpg");
 `;
 
-const AppLabel = styledComponents.span`
+const Container2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  box-shadow: 0 3px 6px 2px #555;
+  padding: 20px 10px;
+  border-radius: 4px;
+  width: 380px;
+`;
+const Header = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-left: 350px;
+  & img {
+    display: inline;
+    width: 50px;
+    height: 50px;
+    margin-top: 0px;
+  }
+  & span {
+    display: inline;
+    color: black;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue';
+    margin: 5px 0px 0px 15px;
+  }
+`;
+
+const GeoLabel = styled.span`
+  text-align: center;
   color: black;
   font-size: 20px;
   font-weight: bold;
 `;
 
+const Footer = styled.footer`
+  text-align: center;
+  background-color: brown;
+  color: white;
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 3px;
+`;
 
 function App() {
+ 
+  //Current Location
+  const [currWeather, setCurrWeather] = useState();
 
+  //Search City
   const [city, setCity] = useState();
   const [weather, setWeather] = useState();
+
+  window.addEventListener("load", () => {
+    let long,lat;
+
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition( async (position) => {
+        long = position.coords.longitude;
+        lat = position.coords.latitude;
+
+        const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`);
+        setCurrWeather(resp.data);
+        console.log(resp.data);
+      })
+    }
+  })
 
   const fetchWeather = async (e) => {
     e.preventDefault();
@@ -39,14 +100,27 @@ function App() {
 
   return (
     <>
-    <Container>
-      <AppLabel>GEO WEATHER TRACKER</AppLabel>
+    <Header>
+    <img src="/react-weather-app/icons/Klara-1.png" />
+    <span>GEO WEATHER TRACKER</span>
+    </Header>
+    <Grid container spacing={15}>
+    <Grid item md={6}>
+    <Container1>
+      <GeoLabel>Your Location</GeoLabel>
+      <WeatherComponent weather={currWeather} />
+    </Container1>
+    </Grid>
+    <Grid item md={4}>
+    <Container2>
       { weather ? (
       <WeatherComponent weather={weather} />
       ): (<CityComponent setCity={setCity} fetchWeather={fetchWeather}/>
       )}
-    </Container>
-    <footer>2022 &copy; DEBARGHA MUKHERJEE</footer>
+    </Container2>
+    </Grid>
+    <Footer>&copy; 2022 DEBARGHA MUKHERJEE . All Rights Reserved</Footer>
+    </Grid>
     </>
   );
 }
