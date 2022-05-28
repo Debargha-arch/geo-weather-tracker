@@ -10,13 +10,13 @@ const API_KEY = 'a8688f952698bd5ed7ee9e23b1354a83';
 const Container1 = styled.div`
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: auto auto 2px auto;
   align-items: center;
   box-shadow: 0 3px 6px 0 #555;
-  padding: 20px 10px;
+  padding: 40px 10px;
   border-radius: 4px;
   width: 540px;
-  height: 90%;
+  height: 80%;
   color: white;
   background-image: url("/react-weather-app/locicon/turbine.jpg");
 `;
@@ -64,7 +64,7 @@ const Footer = styled.footer`
   color: white;
   width: 100%;
   margin-bottom: 0px;
-  padding: 3px;
+  padding: 12px;
 `;
 
 function App() {
@@ -113,9 +113,10 @@ function App() {
     </Grid>
     <Grid item md={4}>
     <Container2>
+    <CityComponent setCity={setCity} fetchWeather={fetchWeather}/>
       { weather ? (
       <WeatherComponent weather={weather} />
-      ): (<CityComponent setCity={setCity} fetchWeather={fetchWeather}/>
+      ): ( <></>
       )}
     </Container2>
     </Grid>

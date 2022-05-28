@@ -6,7 +6,7 @@ const SearchBox = styled.form`
   flex-direction: row;
   border: black solid 1px;
   border-radius: 2px;
-  margin: 10px auto;
+  margin: auto;
 
   & input{
       padding: 10px;

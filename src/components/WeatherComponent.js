@@ -44,7 +44,7 @@ const WeatherCondition = styled.div`
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  margin: 30px auto;
+  margin: 0px auto;
 `;
 
 const Condition = styled.span`
