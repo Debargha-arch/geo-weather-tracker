@@ -34,7 +34,8 @@ const Container2 = styled.div`
 const Header = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 350px;
+  justify-content: center;
+  margin: auto;
   & img {
     display: inline;
     width: 50px;
@@ -104,7 +105,7 @@ function App() {
     <img src="/geo-weather-tracker/icons/Klara-1.png" alt='logo'/>
     <span>GEO WEATHER TRACKER</span>
     </Header>
-    <Grid container spacing={15}>
+    <Grid container spacing={12}>
     <Grid item md={6}>
     <Container1>
       <GeoLabel>Your Location</GeoLabel>
