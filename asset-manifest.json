@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/geo-weather-tracker/static/css/main.21e65229.css",
-    "main.js": "/geo-weather-tracker/static/js/main.b3064fcf.js",
+    "main.js": "/geo-weather-tracker/static/js/main.1ffe4eea.js",
     "static/media/icegif-460.gif": "/geo-weather-tracker/static/media/icegif-460.17eb69b759bfa69e2397.gif",
     "index.html": "/geo-weather-tracker/index.html",
     "main.21e65229.css.map": "/geo-weather-tracker/static/css/main.21e65229.css.map",
-    "main.b3064fcf.js.map": "/geo-weather-tracker/static/js/main.b3064fcf.js.map"
+    "main.1ffe4eea.js.map": "/geo-weather-tracker/static/js/main.1ffe4eea.js.map"
   },
   "entrypoints": [
     "static/css/main.21e65229.css",
-    "static/js/main.b3064fcf.js"
+    "static/js/main.1ffe4eea.js"
   ]
 }
